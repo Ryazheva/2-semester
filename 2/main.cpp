@@ -39,14 +39,11 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	int s;
-	std::cin >> s;
+	Cube s(2);
 
-	Cube p1(s);
-
-	std::cout << "площадь: " << p1.Square() << std::endl;
-	std::cout << "объем: " << p1.Volume() << std::endl;
-	std::cout << "длина диагонали: " << p1.Diagonal() << std::endl;
+	std::cout << "площадь: " << s.Square() << std::endl;
+	std::cout << "объем: " << s.Volume() << std::endl;
+	std::cout << "длина диагонали: " << s.Diagonal() << std::endl;
 
 	return 0;
 }
