@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 
 class Cube
@@ -9,13 +9,13 @@ public:
 
 	Cube(int a)
 	{
-		m_a = a;
+		setA(a);
 	}
 
 	void setA(int a)
 	{
 		if (a < 0)
-			std::cout << "отрицательное число стороны куба" << std::endl;
+			std::cout << "отрицательное число" << std::endl;
 		m_a = a;
 	}
 
@@ -38,8 +38,10 @@ public:
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-
-	Cube s(2);
+	
+	int c;
+	std::cin >> c;
+	Cube s(c);
 
 	std::cout << "площадь: " << s.Square() << std::endl;
 	std::cout << "объем: " << s.Volume() << std::endl;
