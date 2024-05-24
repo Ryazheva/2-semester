@@ -22,7 +22,7 @@ namespace mt
 			m_alpha = 0;
 			m_v = 0;
 
-			// загрузка текстуры фона
+			// Р·Р°РіСЂСѓР·РєР° С‚РµРєСЃС‚СѓСЂС‹ С„РѕРЅР°
 			sf::Texture texture;
 			if (!m_textureKite.loadFromFile("images\\kite.png"))
 			{
