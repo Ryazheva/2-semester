@@ -33,10 +33,10 @@ namespace mt
 		bool Setup(int n)
 		{
 			m_n = n;
-			// создание окна
+			// СЃРѕР·РґР°РЅРёРµ РѕРєРЅР°
 			m_window.create(sf::VideoMode(m_width, m_height), m_capture);
 
-			// загрузка текстуры фона
+			// Р·Р°РіСЂСѓР·РєР° С‚РµРєСЃС‚СѓСЂС‹ С„РѕРЅР°
 			sf::Texture texture;
 			if (!m_textureBackground.loadFromFile("images\\sky.jpg"))
 			{
@@ -46,7 +46,7 @@ namespace mt
 			m_spriteBackground.setTexture(m_textureBackground);
 			m_spriteBackground.setScale(0.6f, 0.6f);
 
-			// создание змея
+			// СЃРѕР·РґР°РЅРёРµ Р·РјРµСЏ
 			if (!m_kite.Setup(100, 100))
 				return false;
 
@@ -90,7 +90,7 @@ namespace mt
 
 			while (m_window.isOpen())
 			{
-				// обработка событий
+				// РѕР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№
 				sf::Event event;
 				while (m_window.pollEvent(event))
 				{
@@ -98,7 +98,7 @@ namespace mt
 						m_window.close();
 				}
 
-				// обработка клавиатуры 
+				// РѕР±СЂР°Р±РѕС‚РєР° РєР»Р°РІРёР°С‚СѓСЂС‹ 
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
 					m_kite.setVelocity(0.001);
@@ -116,7 +116,7 @@ namespace mt
 					m_kite.Rotate(1);
 				}
 
-				// логика
+				// Р»РѕРіРёРєР°
 				float dt = clock.getElapsedTime().asSeconds();
 				if (1 / fps > dt)
 				{
@@ -127,17 +127,17 @@ namespace mt
 				clock.restart();
 
 
-				// пересечение шарика
+				// РїРµСЂРµРјРµС‰РµРЅРёРµ С€Р°СЂРёРєР°
 				for (int i = 0; i < m_n; i++)
 					m_c[i].Move(dt);
 
 				for (int i = 0; i < m_n; i++)
 					TouchBorder(m_c[i]);
 
-				// перемещение змея 
+				// РїРµСЂРµРјРµС‰РµРЅРёРµ Р·РјРµСЏ
 				m_kite.Move();
 
-				// отображение
+				// РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ
 				m_window.clear();
 				m_window.draw(m_spriteBackground);
 				m_window.draw(m_kite.Get());
