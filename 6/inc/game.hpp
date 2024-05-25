@@ -63,7 +63,7 @@ namespace mt
 				m_c[i].Setup(x, y, r, v, alfa);
 			}
 		}
-
+		// ограничение для выхода за границы поля (шариков)
 		void TouchBorder(Circle& obj)
 		{
 			float x = obj.X();
